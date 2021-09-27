@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mriensch-spring-clinic-test
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-compliance
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: spring-petclinic
+    repoURL: https://github.com/mriensch/argo-test-app
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
