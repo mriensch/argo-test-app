@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   annotations:
   labels:
-    app: spring-petclinic
+    app: spring-petclinic-mriensch
     app.kubernetes.io/component: web
-    app.kubernetes.io/instance: spring-petclinic
-    app.kubernetes.io/name: spring-petclinic
-    app.kubernetes.io/part-of: spring-petclinic
+    app.kubernetes.io/instance: spring-petclinic-mriensch
+    app.kubernetes.io/name: spring-petclinic-mriensch
+    app.kubernetes.io/part-of: spring-petclinic-mriensch
     app.openshift.io/runtime: java
   name: spring-petclinic-mriensch
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-petclinic
+      app: spring-petclinic-mriensch
   template:
     metadata:
       labels:
-        app: spring-petclinic
+        app: spring-petclinic-mriensch
     spec:
       containers:
       - name: spring-petclinic

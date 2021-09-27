@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: spring-petclinic
+    app: spring-petclinic-mriensch
   name: spring-petclinic-mriensch
 spec:
   ports:

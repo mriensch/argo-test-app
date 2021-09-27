@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: spring-petclinic
+    app: spring-petclinic-mriensch
   name: spring-petclinic-mriensch
 spec:
   port:
     targetPort: 8080-tcp
   to:
     kind: Service
-    name: spring-petclinic
+    name: spring-petclinic-mriensch
     weight: 100
