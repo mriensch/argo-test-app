@@ -21,7 +21,7 @@ spec:
         app: spring-petclinic-mriensch
     spec:
       containers:
-      - name: spring-petclinic
+      - name: spring-petclinic-mriensch
         imagePullPolicy: Always
         image: quay.io/siamaksade/spring-petclinic:latest
         livenessProbe:
