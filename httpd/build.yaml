@@ -1,0 +1,48 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: httpd-ex
+    app.kubernetes.io/component: httpd-ex
+    app.kubernetes.io/instance: httpd-ex
+    manager: openshift-apiserver
+    operation: Update
+  name: httpd-ex
+  namespace: httpd-ex
+  uid: 329663cb-21bd-4f83-b2eb-037894480558
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: httpd-ex:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/sclorg/httpd-ex
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: httpd-24-centos7:latest
+    type: Source
+  successfulBuildsHistoryLimit: 5
+  triggers:
+  - github:
+      secret: gNTPlURQjhUPn2WE-yxU
+    type: GitHub
+  - generic:
+      secret: 62bNYPEabx924uSQvrXt
+    type: Generic
+  - type: ConfigChange
+  - imageChange:
+      lastTriggeredImageID: centos/httpd-24-centos7@sha256:001ec5d1b463d8d62c87b11ef9ca64603e6dd2eb88edadcb4f70f1c593aa83af
+    type: ImageChange
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

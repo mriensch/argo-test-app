@@ -1,0 +1,28 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+    labels:
+      app: httpd-ex
+      app.kubernetes.io/component: httpd-ex
+      app.kubernetes.io/instance: httpd-ex
+    name: httpd-ex
+    namespace: httpd-ex
+  spec:
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: httpd-ex
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,32 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+    labels:
+      app: httpd-ex
+      app.kubernetes.io/component: httpd-ex
+      app.kubernetes.io/instance: httpd-ex
+    name: httpd-ex
+    namespace: httpd-ex
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      deployment: httpd-ex
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

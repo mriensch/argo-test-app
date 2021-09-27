@@ -1,0 +1,5 @@
+resources:
+- build.yaml
+- service.yaml
+- route.yaml
+- namespace.yaml
