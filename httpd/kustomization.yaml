@@ -3,4 +3,3 @@ resources:
 - service.yaml
 - route.yaml
 - namespace.yaml
-- rolebinding.yaml
