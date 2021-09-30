@@ -6,4 +6,5 @@ spec:
  text: Unclassified ##Classification Level
  location: BannerTopBottom ##Other options are BannerBottom, BannerTopBottom
  color: '#FFFFFF' ##Hexcode for white text color
- backgroundColor: '#008000' ##Hexcode for banner background color
+   # backgroundColor: '#008000' ##Hexcode for banner background color
+ backgroundColor: 'B528C1' ##Hexcode for banner background color
